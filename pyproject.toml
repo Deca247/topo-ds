@@ -1,0 +1,34 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "topods"
+version = "0.1.0"
+description = "Topology-informed stable dynamical systems learned from demonstrations"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+authors = [
+  { name = "Anonymous"}
+]
+dependencies = [
+  "cvxpy>=1.4",
+  "matplotlib>=3.8",
+  "networkx>=3.2",
+  "numba>=0.59",
+  "numpy>=1.26",
+  "pyLasaDataset",
+  "scipy>=1.11",
+  "tqdm>=4.66",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/topods"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
